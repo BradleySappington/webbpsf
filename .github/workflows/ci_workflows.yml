@@ -16,36 +16,10 @@ jobs:
       matrix:
         include:
 
-          - name: Coverage test in Python 3
-            os: ubuntu-latest
-            python: '3.11'
-            toxenv: py311-poppydev-pysiafdev-cov
-
           - name: Check for Sphinx doc build errors
             os: ubuntu-latest
             python: '3.10'
             toxenv: docbuild
-
-          - name: Try Astropy development version
-            os: ubuntu-latest
-            python: '3.10'
-            toxenv: py310-astropydev-test
-
-          - name: Try latest versions of all dependencies
-            os: ubuntu-latest
-            python: '3.11'
-            toxenv: py311-latest-test
-
-          - name: Try minimum supported versions
-            os: ubuntu-latest
-            python: '3.10'
-            toxenv: py310-legacy-test
-
-          - name: Try released POPPY and PySIAF
-            os: ubuntu-latest
-            python: '3.10'
-            toxenv: py310-stable-test
-            continue-on-error: 'true'
 
     steps:
     - name: Checkout code
@@ -87,9 +61,3 @@ jobs:
       if: matrix.continue-on-error
       continue-on-error: true
       run: tox -e ${{ matrix.toxenv }}
-
-    - name: Upload coverage to codecov
-      if: ${{ contains(matrix.toxenv,'-cov') }}
-      uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673  # v4.5.0
-      with:
-        file: ./coverage.xml

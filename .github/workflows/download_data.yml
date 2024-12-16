@@ -56,8 +56,6 @@ on:
         type: boolean
         required: false
         default: true
-  schedule:
-    - cron: "0 0 * * 0"
   release:
   push:
     branches:
