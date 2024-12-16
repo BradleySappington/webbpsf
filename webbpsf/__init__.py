@@ -24,10 +24,13 @@ warnings.warn(
 
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    THIS LIBRARY HAS BEEN DEPRECATED
+    THE WEBBPSF LIBRARY HAS BEEN DEPRECATED
     All existing WebbPSF code has been migrated to the STPSF package.
     Please update your code to use STPSF instead of WebbPSF.
-    WebbPSF is an alias of STPSF and is running code from the STPSF library.
+        https://github.com/spacetelescope/stpsf
+            or
+        pip install stpsf
+    WebbPSF is now an alias of STPSF and is running code from the STPSF library.
 
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -36,6 +39,6 @@ warnings.warn(
     stacklevel=2,  # Shows the webbpsf import code
 )
 
-sys.modules["webbpsf"]=stpsf
+sys.modules["webbpsf"] = stpsf
 
 os.environ["STPSF_PATH"] = os.environ.get("WEBBPSF_PATH", "")
