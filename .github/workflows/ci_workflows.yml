@@ -47,17 +47,5 @@ jobs:
     - name: Check conda info
       run: conda info
 
-    - name: Run tests with requirements file
-      if: ${{ contains(matrix.toxenv,'-latest') }}
-      run: |
-        cp requirements.txt ${{ runner.temp }}
-        tox -e ${{ matrix.toxenv }}
-
-    - name: Run tests
-      if: ${{ matrix.continue-on-error == null && contains(matrix.toxenv,'-latest') != true }}
-      run: tox -e ${{ matrix.toxenv }}
-
-    - name: Run tests and allow failures
-      if: matrix.continue-on-error
-      continue-on-error: true
+    - name: Run Sphinx doc build
       run: tox -e ${{ matrix.toxenv }}
