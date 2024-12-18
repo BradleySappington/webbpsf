@@ -24,12 +24,17 @@ warnings.warn(
 
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    THE WEBBPSF LIBRARY HAS BEEN DEPRECATED
-    All existing WebbPSF code has been migrated to the STPSF package.
-    Please update your code to use STPSF instead of WebbPSF.
-        https://github.com/spacetelescope/stpsf
-            or
-        pip install stpsf
+    THE WEBBPSF LIBRARY HAS BEEN MOVED
+    All existing WebbPSF functionality has been migrated to the newly made STPSF respository.
+    WebbPSF library will continue working
+
+    If you would like to switch to the new repository:
+        Please update your code to use STPSF instead of WebbPSF.
+            https://github.com/spacetelescope/stpsf
+                or
+            pip install stpsf
+
+    STPSF Functionality is currently the same, only the name is different.
     WebbPSF is now an alias of STPSF and is running code from the STPSF library.
 
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
