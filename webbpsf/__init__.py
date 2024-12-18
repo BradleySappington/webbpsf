@@ -30,7 +30,7 @@ if not _warned:
         This message is for information only and WebbPSF will continue to function as normal:
 
         THE WEBBPSF LIBRARY HAS BEEN MOVED
-        All existing WebbPSF functionality has been migrated to the newly made STPSF respository.
+        All existing WebbPSF functionality has been migrated to the newly made STPSF repository.
 
         If you would like to switch to the new repository:
             Please update your code to use STPSF instead of WebbPSF.
