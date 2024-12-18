@@ -19,30 +19,35 @@ import stpsf
 import sys
 import warnings
 
-warnings.warn(
-    """"
 
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    This message is for information only and WebbPSF will continue to function as normal:
+_warned = False
 
-    THE WEBBPSF LIBRARY HAS BEEN MOVED
-    All existing WebbPSF functionality has been migrated to the newly made STPSF respository.
+if not _warned:
+    warnings.warn(
+        """"
 
-    If you would like to switch to the new repository:
-        Please update your code to use STPSF instead of WebbPSF.
-            https://github.com/spacetelescope/stpsf
-                or
-            pip install stpsf
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        This message is for information only and WebbPSF will continue to function as normal:
 
-    STPSF Functionality is currently the same as WebbPSF, only the name is different.
-    WebbPSF is now an alias of STPSF and is running code from the STPSF library.
+        THE WEBBPSF LIBRARY HAS BEEN MOVED
+        All existing WebbPSF functionality has been migrated to the newly made STPSF respository.
 
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        If you would like to switch to the new repository:
+            Please update your code to use STPSF instead of WebbPSF.
+                https://github.com/spacetelescope/stpsf
+                    or
+                pip install stpsf
 
-    """,
-    DeprecationWarning,
-    stacklevel=2,  # Shows the webbpsf import code
-)
+        STPSF Functionality is currently the same as WebbPSF, only the name is different.
+        WebbPSF is now an alias of STPSF and is running code from the STPSF library.
+
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        """,
+        DeprecationWarning,
+        stacklevel=2,  # Shows the webbpsf import code
+    )
+    _warned = True
 
 sys.modules["webbpsf"] = stpsf
 
