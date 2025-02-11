@@ -34,6 +34,6 @@ if not _warned:
     )
     _warned = True
 
-sys.modules["webbpsf"] = stpsf
-
-os.environ["STPSF_PATH"] = os.environ.get("WEBBPSF_PATH", "")
+if "PYTEST_CURRENT_TEST" not in os.environ:
+    sys.modules["webbpsf"] = stpsf
+    os.environ["STPSF_PATH"] = os.environ.get("WEBBPSF_PATH", "")
