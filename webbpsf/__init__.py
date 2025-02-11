@@ -21,12 +21,12 @@ import warnings
 
 
 _warned = False
-# TODO SAPP - update [READTHEDOCS_PAGE_TBD] to be correct location once created
 if not _warned:
     warnings.warn(
         """"
         This message is for information only and WebbPSF will continue to function as normal.
-        The WebbPSF library has been moved/renamed to STPSF. Please see [READTHEDOCS_PAGE_TBD] for more information.
+        The WebbPSF library has been moved/renamed to STPSF.
+        Please see https://stpsf.readthedocs.io/en/latest/webbpsf_to_stpsf.html for more information.
         WebbPSF is now an alias of STPSF and is running code from the STPSF library.
         """,
         DeprecationWarning,
