@@ -26,7 +26,7 @@ if not _warned:
         """"
         This message is for information only and WebbPSF will continue to function as normal.
         The WebbPSF library has been moved/renamed to STPSF.
-        Please see https://stpsf.readthedocs.io/en/latest/webbpsf_to_stpsf.html for more information.
+        Please see https://stpsf.readthedocs.io/en/stable/ for more information.
         WebbPSF is now an alias of STPSF and is running code from the STPSF library.
         """,
         DeprecationWarning,
@@ -34,6 +34,5 @@ if not _warned:
     )
     _warned = True
 
-if "PYTEST_CURRENT_TEST" not in os.environ:
     sys.modules["webbpsf"] = stpsf
     os.environ["STPSF_PATH"] = os.environ.get("WEBBPSF_PATH", "")
